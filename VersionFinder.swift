@@ -12,7 +12,7 @@ import Alamofire
 
 
 public class VersionFinder: Mappable{
-    
+    ///Obtaining Version for updating URL
     var version : String?
     
     
@@ -33,6 +33,7 @@ public class VersionFinder: Mappable{
             Alamofire.request(url).responseJSON(completionHandler: {
                 response in
                 
+                ///Obtaining result and mapping to ChampionList object.
                 let result = response.result
                 if let dict = result.value {
                     _ = Mapper<ChampionList>().map(JSON: dict as! [String : AnyObject])
@@ -42,6 +43,8 @@ public class VersionFinder: Mappable{
             })
             
         }
+        
+        ///Creating up to date uRL
         let champURL = "https://ddragon.leagueoflegends.com/cdn/\(version!)/data/en_US/champion.json"
         callApi(url: champURL)
         

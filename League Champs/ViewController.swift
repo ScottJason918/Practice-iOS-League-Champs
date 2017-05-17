@@ -15,13 +15,17 @@ import SVProgressHUD
 
 class CollectionViewController: UICollectionViewController {
     
-    ///API URL
+    ///Accessing Array in ChampionMapper
+    var champList = ChampionList()
+    
+    ///API URL to obtain correct Version
     var versionURL = "https://global.api.riotgames.com/api/lol/static-data/NA/v1.2/realm?api_key=feec407a-94fe-4886-a8ed-3cc889a15c66"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         versionAPI(url: versionURL)
+        
     }
     
     ///AlamoFire for Version
@@ -40,6 +44,10 @@ class CollectionViewController: UICollectionViewController {
         })
         
     }
+    
+
+    
+    
     
     
     
