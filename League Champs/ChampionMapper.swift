@@ -34,7 +34,7 @@ public class ChampionList: Mappable{
         
         ///Alphabetize Array
         championInfo.sort(by: {$0.name! < $1.name!})
-        
+        print(championInfo)
         
         
 
